@@ -7,8 +7,15 @@
       name="description"
       content="Fourch est, livraison de repas a domicile, cuisine lorraine, alsace, grand est"
     />
+    <meta
+      name="description"
+      content="Les meilleurs restaurants du Grand Est, livrés chez vous ! Trouvez facilement des adresses incontournables avec des options végétariennes et locales."
+    />
+    <link rel="icon" type="image/x-icon" href="assetes\images\favicon.ico" />
     <meta name="author" content="Wilders Grand'EST" />
     <link href="./dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css">
+    
     <title>FourchEst | HomePage</title>
   </head>
 
@@ -22,7 +29,7 @@
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
-            fill="none"
+            fill="black"
             viewBox="0 0 24 24"
           >
             <path
@@ -47,92 +54,119 @@
     </header>
 
     <!---------------------------Bar de recherche--------------------->
-    <section class="md:relative md:top-10 md:flex md:justify-around">
-    <img src="assetes/images/macaronBanniere.png" alt="images du macaron" class="hidden md:block md:w-55 md:h-60 md:mr-70"> 
-    <img src="assetes/images/burgerdesktop.png" alt="image du burger" class="hidden md:block md:w-55 md:h-60 md:ml-50">
-    </section>
-
-    <form class="relative md:bottom-30 my-5 mx-7 md:mx-50 lg:mx-100">
-      <label
-        for="default-search"
-        class="mb-2 text-sm font-medium text-gray-900 sr-only"
-        >Search</label
+    <section class="flex flex-col items-center md:flex-row md:justify-between mx-5 mt-5 space-y-5 md:space-y-0">
+      <!-- Image de Gauche -->
+      <img
+        src="assetes/images/macaronBanniere.png"
+        alt="images du macaron"
+        class="hidden md:block md:w-40 md:h-40 lg:w-48 lg:h-48"
+      />
+    
+      <form
+        action="./restaurant.html"
+        class="w-full md:w-2/3 lg:w-1/2 relative shadow-xl"
       >
-      <div class="relative">
-        <div
-          class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+        <label
+          for="default-search"
+          class="mb-2 text-sm font-medium text-gray-900 sr-only"
+          >Search</label
         >
-          <svg
-            class="w-4 h-4 text-gray-500"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 20 20"
+        <div class="relative">
+          <div
+            class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
           >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-            />
-          </svg>
+            <svg
+              class="w-5 h-5 text-gray-500"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 20 20"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+              />
+            </svg>
+          </div>
+          <select
+            id="default-search"
+            class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 hover:border-blue-400 appearance-none transition duration-200"
+            aria-label="Select a position"
+            required
+          >
+            <option value="" disabled selected hidden>
+            Sélectionnez une ville...
+            </option>
+            <option value="Metz">Metz</option>
+            <option value="Nancy">Nancy</option>
+            <option value="Strasbourg">Strasbourg</option>
+            <option value="Reims">Reims</option>
+          </select>
+    
+          <button
+            type="submit"
+            class="text-white absolute right-2.5 bottom-2.5 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 shadow-lg shadow-blue-500/50 font-medium rounded-lg text-sm px-4 py-2"
+          >
+            Recherche
+          </button>
         </div>
-        <select
-          id="default-search"
-          class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50/95 focus:ring-blue-500 focus:border-blue-500 hover:border-blue-400 appearance-none transition duration-200"
-          aria-label="Select a position"
-          required
-        >
-          <option value="" disabled selected hidden>
-            Select a position...
-          </option>
-          <option value="metz">Metz</option>
-          <option value="nancy">Nancy</option>
-          <option value="strasbourg">Strasbourg</option>
-          <option value="strasbourg">Reims</option>
-        </select>
-
-        <button
-          type="submit"
-          class="text-white absolute end-2.5 bottom-2.5 bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
-        >
-          Recherche
-        </button>
-      </div>
-    </form>
+      </form>
+    
+      <!-- Image de droite -->
+      <img
+        src="assetes/images/burgerdesktop.png"
+        alt="image du burger"
+        class="hidden md:block md:w-40 md:h-40 lg:w-48 lg:h-48"
+      />
+    </section>
 
     <!---------------------------CAROUSEL--------------------------->
 
     <div
-      class="carousel-container w-full flex flex-col justify-center gap-0.7 "
+      class="carousel-container overflow-hidden"
     >
       <div
-        class="carousel-track flex gap-0.5 transition-transform duration-0.5r ease-in-out"
+        class="carousel-track"
       ></div>
     </div>
 
     <!---------------------------Cartes----------------------------->
 
     <section
-      class="flex flex-col md:grid md:grid-cols-3 lg:grid lg:grid-cols-3"
+      class="flex flex-col mx-auto md:grid md:grid-cols-2 lg:grid lg:grid-cols-4 "
     >
       <div
-        class="max-w-sm m-10 bg-white/95 border-3 border-gray-200 rounded-xl shadow-2xl overflow-hidden"
+        class="max-w-sm m-10 bg-white/95 border-3 border-gray-200 rounded-xl shadow-2xl overflow-hidden group"
       >
         <h2 class="text-lg font-bold text-gray-800 mb-2 text-center pt-5">
           Livraison rapide
         </h2>
-        <div class="flex justify-center p-1">
+        <div class="relative flex justify-center p-1">
           <img
-            src="assetes/images/livraison rapide.png"
-            class="w-32 h-32 rounded-2xl object-contain"
-            alt="Livraison rapide"
+            src="assetes/images/fast_delivery.jpg"
+            class="w-40 h-40 rounded-2xl md:group-hover:opacity-0 md:transition-opacity md:duration-300"
+            alt="Livraison rapide" 
+            id="image-1"
           />
+          <p
+      class="hidden md:block md:absolute md:top-0 md:left-0 md:w-full md:h-full pt-5 text-center text-sm font-bold text-gray-800 bg-white/90 rounded-2xl px-3 md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-300"
+      id="message-1"
+    >
+          Besoin de votre repas rapidement ? 
+          <br>Nous livrons en un temps record pour
+          que vous puissiez savourer vos plats préférés sans attendre. 
+          <br>Frais, chaud
+          et directement à votre porte !
+        </p>
         </div>
         <div class="p-5 text-center">
           <button
-            class="px-4 py-2 bg-yellow-300 text-black border-b-transparent text-sm font-medium rounded-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="toggle-button md:hidden px-4 p-2 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br shadow-lg shadow-blue-500/50 font-medium rounded-lg text-sm text-center me-2 mb-2"
+            data-target="message-1"
+            data-image="image-1"
           >
             En savoir plus
           </button>
@@ -140,21 +174,32 @@
       </div>
 
       <div
-        class="max-w-sm m-10 bg-white/95 border-3 border-gray-200 rounded-xl shadow-2xl overflow-hidden"
+        class="max-w-sm m-10 bg-white/95 border-3 border-gray-200 rounded-xl shadow-2xl overflow-hidden group"
       >
         <h2 class="text-lg font-bold text-gray-800 mb-2 text-center pt-5">
-          Livraison rapide
+          Economies
         </h2>
-        <div class="flex justify-center p-1">
+        <div class="relative flex justify-center p-1">
           <img
-            src="assetes/images/fraisreduits.png"
-            class="w-32 h-32 rounded-xl object-contain"
+            src="assetes/images/money_savings.jpg"
+            class="w-40 h-40 rounded-2xl md:group-hover:opacity-0 md:transition-opacity md:duration-300"
             alt="Livraison rapide"
+            id="image-2"
           />
+          <p
+      class="hidden md:block md:absolute md:top-0 md:left-0 md:w-full md:h-full text-center text-sm font-bold rounded-2xl px-3 md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-300"
+      id="message-2"
+    >
+    <br>Régalez-vous avec des plats savoureux à des prix imbattables.
+    <br>Profitez d'offres exclusives et de frais de livraison réduits pour un plaisir gourmand sans compromis !
+        </p> 
         </div>
+        
         <div class="p-5 text-center">
           <button
-            class="px-4 py-2 bg-blue-700 text-white text-sm font-medium rounded-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="toggle-button md:hidden px-4 p-2 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br shadow-lg shadow-blue-500/50 font-medium rounded-lg text-sm text-center me-2 mb-2"
+            data-target="message-2"
+            data-image="image-2"
           >
             En savoir plus
           </button>
@@ -162,21 +207,66 @@
       </div>
 
       <div
-        class="max-w-sm m-10 bg-white/95 border-3 border-gray-200 rounded-xl shadow-2xl overflow-hidden"
+  class="max-w-sm m-10 bg-white/95 border-3 border-gray-200 rounded-xl shadow-2xl overflow-hidden group"
+>
+  <h2 class="text-lg font-bold text-gray-800 mb-2 text-center pt-5">
+    Savourez l’authenticité
+  </h2>
+  <div class="relative flex justify-center p-1">
+    <img
+      src="assetes/images/gardener.jpg"
+      class="w-40 h-40 rounded-2xl md:group-hover:opacity-0 md:transition-opacity md:duration-300"
+      id="image-3"
+      alt="Livraison rapide"
+    />
+    <p
+      class="hidden md:block md:absolute md:top-0 md:left-0 md:w-full md:h-full pt-5 text-center text-sm font-bold text-gray-800 bg-white/90 rounded-2xl px-3 md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-300"
+      id="message-3"
+    >
+    Savourez de délicieux plats préparés avec des ingrédients frais et locaux.
+<br>Découvrez et mettez à l’honneur le savoir-faire de notre région.
+<br>Un merveilleux voyage culinaire !
+    </p>
+  </div>
+  <div class="p-5 text-center">
+    <button
+      class="toggle-button md:hidden px-4 p-2 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br shadow-lg shadow-blue-500/50 font-medium rounded-lg text-sm text-center me-2 mb-2"
+      data-target="message-3"
+      data-image="image-3"
+    >
+      En savoir plus
+    </button>
+  </div>
+      </div>
+
+      <div
+        class="max-w-sm m-10 bg-white/95 border-3 border-gray-200 rounded-xl shadow-2xl overflow-hidden group"
       >
         <h2 class="text-lg font-bold text-gray-800 mb-2 text-center pt-5">
-          Livraison rapide
+          Garantie
         </h2>
-        <div class="flex justify-center pt-1">
+        <div class="relative flex justify-center p-1">
           <img
-            src="assetes/images/platslocaux.png"
-            class="w-50 h-32 rounded-2xl"
+            src="assetes/images/garantie_thumbs_up.png"
+            class="w-55 h-40 rounded-2xl md:group-hover:opacity-0 md:transition-opacity md:duration-300"
             alt="Livraison rapide"
+            id="image-4"
           />
+          <p
+      class="hidden md:block md:absolute md:top-0 md:left-0 md:w-full md:h-full text-center text-sm font-bold rounded-2xl px-3 md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-300"
+      id="message-4"
+    >
+    Nous assurons une livraison fiable et sécurisée. En cas de retard ou de problème, 
+    <br>nous intervenons rapidement pour une solution efficace. 
+    <br>Votre satisfaction est notre priorité !
+        </p> 
         </div>
+        
         <div class="p-5 text-center">
           <button
-            class="px-4 p-2 bg-blue-700 text-white text-sm font-medium rounded-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="toggle-button md:hidden px-4 p-2 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br shadow-lg shadow-blue-500/50 font-medium rounded-lg text-sm text-center me-2 mb-2"
+            data-target="message-4"
+            data-image="image-4"
           >
             En savoir plus
           </button>
@@ -186,179 +276,99 @@
 
     <!---------------------------Testimonials--------------------------->
 
-    <section class="md:grid md:grid-cols-2 lg:grid lg:grid-cols-2">
-      <div class="m-10 mt-10">
-        
-        <div
-          class="bg-gradient-to-r from-blue-900 to-white/95 rounded-xl shadow-2xl p-4 text-white"
-        >
-          <div class="bg-white opacity-10 transform -skew-x-12"></div>
-          <div class="relative z-10">
-            <svg
-              class="w-5 h-5 mb-2 text-blue-300"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
-              />
-            </svg>
-            <p class="text-lg font-medium">"Le Service est top !"</p>
-            <div class="mb-2 flex items-center">
-              <svg
-                class="h-5 w-5 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                ></path>
-              </svg>
-              <svg
-                class="h-5 w-5 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                ></path>
-              </svg>
-              <svg
-                class="h-5 w-5 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                ></path>
-              </svg>
-              <svg
-                class="h-5 w-5 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                ></path>
-              </svg>
-              <svg
-                class="h-5 w-5 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                ></path>
-              </svg>
-            </div>
-            <div class="flex items-center">
-              <img
-                src=""
-                alt="Avatar"
-                class="w-12 h-12 rounded-full mr-4 border-2 border-purple-300"
-              />
-              <div>
-                <h4 class="font-semibold">David Robert Joseph Beckham</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <section class="bg-white/95 border-3 border-gray-200 rounded-lg shadow-lg p-6 mb-10 mx-auto max-w-4xl">
+  
+      <div class="text-center mb-6">
+        <h2 class="text-2xl font-bold text-gray-800">Note des clients</h2>
+        <div class="flex justify-center items-center mt-4">
 
-      <div class="m-10 mt-10">
-        <div
-          class="bg-gradient-to-r from-blue-600 to-white/95 border-gray-200 rounded-xl shadow-2xl p-4 text-white"
-        >
-          <div class="bg-white opacity-10 transform -skew-x-12"></div>
-          <div class="relative z-10">
-            <svg
-              class="w-5 h-5 mb-2 text-blue-300"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
-              />
-            </svg>
-            <p class="text-lg font-medium">
-              "Oi ! The sausage is good, Great dilevery fellas"
-            </p>
-            <div class="mb-2 flex items-center">
-              <svg
-                class="h-5 w-5 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                ></path>
-              </svg>
-              <svg
-                class="h-5 w-5 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                ></path>
-              </svg>
-              <svg
-                class="h-5 w-5 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                ></path>
-              </svg>
-              <svg
-                class="h-5 w-5 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                ></path>
-              </svg>
-              <svg
-                class="h-5 w-5 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                ></path>
-              </svg>
-            </div>
-            <div class="flex items-center">
-              <img
-                src=""
-                alt="Avatar"
-                class="w-12 h-12 rounded-full mr-4 border-2 border-purple-300"
-              />
-              <div>
-                <h4 class="font-semibold">Donald John Trump</h4>
-              </div>
-            </div>
+          <svg class="w-4 h-4 md:w-6 md:h-6 text-yellow-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+          </svg>
+          <svg class="w-4 h-4 md:w-6 md:h-6 text-yellow-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+          </svg>
+          <svg class="w-4 h-4 md:w-6 md:h-6 text-yellow-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+          </svg>
+          <svg class="w-4 h-4 md:w-6 md:h-6 text-yellow-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+          </svg>
+          <svg class="w-4 h-4 md:w-6 md:h-6 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+          </svg>
+        </div>
+        <p class="text-gray-500 text-sm mt-2">4 sur 5 (1,745 notes)</p>
+      </div>
+    
+
+      <div class=" space-y-4">
+
+        <div class="flex justify-between items-center">
+          <span class="text-sm font-medium text-gray-700">5 étoiles</span>
+          <div class="w-1/2 h-5 mx-4 bg-gray-200 rounded-full">
+            <div class="h-5 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full" style="width: 60%"></div>
           </div>
+          <span class="text-sm font-medium text-gray-700">60%</span>
+        </div>
+        <!-- 4 Stars -->
+        <div class="flex justify-between items-center">
+          <span class="text-sm font-medium text-gray-700">4 étoiles</span>
+          <div class="w-1/2 h-5 mx-4 bg-gray-200 rounded-full">
+            <div class="h-5 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full" style="width: 10%"></div>
+          </div>
+          <span class="text-sm font-medium text-gray-700">10%</span>
+        </div>
+        <!-- 3 Stars -->
+        <div class="flex justify-between items-center">
+          <span class="text-sm font-medium text-gray-700">3 étoiles</span>
+          <div class="w-1/2 h-5 mx-4 bg-gray-200 rounded-full">
+            <div class="h-5 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full" style="width: 10%"></div>
+          </div>
+          <span class="text-sm font-medium text-gray-700">10%</span>
+        </div>
+        <!-- 2 Stars -->
+        <div class="flex justify-between items-center">
+          <span class="text-sm font-medium text-gray-700">2 étoiles</span>
+          <div class="w-1/2 h-5 mx-4 bg-gray-200 rounded-full">
+            <div class="h-5 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full" style="width: 10%"></div>
+          </div>
+          <span class="text-sm font-medium text-gray-700">10%</span>
+        </div>
+        <!-- 1 Star -->
+        <div class="flex justify-between items-center">
+          <span class="text-sm font-medium text-gray-700">1 étoile</span>
+          <div class="w-1/2 h-5 mx-4 bg-gray-200 rounded-full">
+            <div class="h-5 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full" style="width: 10%"></div>
+          </div>
+          <span class="text-sm font-medium text-gray-700">10%</span>
         </div>
       </div>
     </section>
+     
+
+
+      
 
     <!---------------------------Footer--------------------------->
 
     <footer class="text-black border-t border-black bg-white/95 py-4">
-      <div class="container mx-auto flex justify-between items-center px-4">
+      <div class="w-full flex justify-between items-center px-4">
         <!-- Copyright -->
-        <p class="text-xs font-medium">&copy; 2025</p>
-        <div>
-          <a class="text-xs" href="about.html">
-            <p class="flex justify-center">Mentions légales</p>
-          </a>
+        <div class="flex justify-start">
+          <p class="text-xs font-medium md:text-xl">&copy; 2025</p>
         </div>
 
-        <!-- Social Media Icons -->
-        <div class="flex space-x-4">
+        <!-- Mentions -->
+        <div class="flex-grow flex justify-center">
+          <a href="about.html" class="text-[#191998] font-normal text-sm
+         hover:underline bg-white p-1 rounded-full ">
+          Mentions légales
+        </a>
+        </div>
+
+        <!-- Icons -->
+        <div class="flex justify-end space-x-4">
           <a href="#" class="hover:text-blue-500">
             <svg
               class="w-6 h-6 text-gray-800"
@@ -394,7 +404,7 @@
               />
             </svg>
           </a>
-          <a href="#" class="hover:text-pink-500">
+          <a href="#">
             <svg
               class="w-6 h-6 text-gray-800"
               aria-hidden="true"
@@ -414,5 +424,47 @@
     </footer>
 
     <script type="module" src="./src/main.js"></script>
+    <script type="module" src="./index.js"></script>
+
+     <!---------------------------Background--------------------->
+  <script>
+    const icons = [
+      // Fourchette
+      '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 2a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1zm4 0a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1zm4 0a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1zM6 10v2a2 2 0 0 0 2 2v9a1 1 0 1 0 2 0v-9a2 2 0 0 0 2-2v-2H6z"/></svg>',
+      // Pizza
+      '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 2S6.5 3.5 3 21c7.5-2.7 14.6-9.1 18-18zM7.5 19.5l1.1-3.9 2.3 2.3-3.4 1.6zm7.5-6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>',
+      // Eponge
+      '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4 4 0 0 0-4 4c0 1.3.6 2.5 1.5 3.2V20a1 1 0 0 0 2 0V9.2A4 4 0 0 0 12 2z"/></svg>',
+      // Couteau
+      '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 2l13 13-4 4L2 6l1-4z"/></svg>',
+      // Verre de vin
+      '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 2h8l-1 8H9L8 2zm2 10h4v9h-4v-9z"/></svg>',
+      // tasse de café
+      '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h2a2 2 0 0 1 0 4h-2V8zM2 6h16v6a6 6 0 0 1-6 6H8a6 6 0 0 1-6-6V6zm2 14h12v2H4v-2z"/></svg>',
+      // Pain
+      '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 6c0-1.1.9-2 2-2h12a2 2 0 0 1 0 4H4V6z"/></svg>',
+      // Oeuf
+      '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.1 2 4 10 4 14a8 8 0 0 0 16 0c0-4-4.1-12-8-12z"/></svg>',
+      // Glace
+      '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 0 0-5 5 5 5 0 0 0 .3 1.7A4.5 4.5 0 0 0 6 12h12a4.5 4.5 0 0 0-1.3-3.3A5 5 0 0 0 12 2zm0 13l-2 5h4l-2-5z"/></svg>',
+      ];
+
+    const pageHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+    const numIcons = 150;
+
+    for (let i = 0; i < numIcons; i++) {
+      const icon = document.createElement('div');
+      icon.classList.add('icon');
+      if (Math.random() > 0.5) icon.classList.add('alt');
+      icon.style.top = Math.random() * pageHeight + 'px';
+      icon.style.left = Math.random() * 100 + 'vw';
+      icon.style.animationDelay = `${Math.random() * 0}s, ${Math.random() * 0}s`;
+      const size = 20 + Math.random() * 40;
+      icon.style.width = size + 'px';
+      icon.style.height = size + 'px';
+      icon.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+      document.body.appendChild(icon);
+    }
+  </script>
   </body>
 </html>
