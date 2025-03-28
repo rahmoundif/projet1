@@ -1,8 +1,4 @@
-import './style.css';
-
 //----------------------------------Section Carousel !!!-----------------------------------
-
-
 
 // ciblage de class puis declaration de la variable class carousel container
 const carouselContainer = document.querySelector('.carousel-container');
@@ -42,6 +38,7 @@ for (let i = 0; i < repeatCount; i++) {
     img.style.border = 'solid 3px transparent';
     img.style.boxShadow = '3px 3px 3px 3px grey';
     carouselTrack.appendChild(img); //ajoute img dans le carouselTrack
+
   });
 
   carouselContainer.appendChild(carouselTrack); //ajoute carouselTrack dans le carouselcontainer
@@ -72,34 +69,3 @@ for (let i = 0; i < repeatCount; i++) {
 // appel fonction ligne 16 afin de crée les rows du carousel donc si vous en voulez plus, copie colle.
 createCarouselRow(images, 99, 1000); // nombres de copie du tableau et delai du premier carousel
 createCarouselRow(images, 99, 2000);// idem mais pour le 2eme
-
-//----------------------------------toggle boutton index.html !!!-----------------------------------
-
-document.addEventListener("DOMContentLoaded", () => {
-  // Add event listener sur tout les buottons avec comme class "toggle-button"
-  document.querySelectorAll(".toggle-button").forEach((button) => {
-    button.addEventListener("click", () => {
-      const targetId = button.getAttribute("data-target"); // message ID
-      const imageId = button.getAttribute("data-image"); // image ID
-      const message = document.getElementById(targetId); // trouve le message dans le html
-      const image = document.getElementById(imageId); // trouve l'image
-
-      const isSmallScreen = window.innerWidth < 768; // pour le Tailwind's `md` breakpoint 768px
-
-      if (isSmallScreen) {
-
-        if (message.classList.contains("hidden")) {
-          message.classList.remove("hidden");
-          image.classList.add("hidden");
-          button.textContent = "Retour";
-        } else {
-          message.classList.add("hidden");
-          image.classList.remove("hidden");
-          button.textContent = "En savoir plus";
-        }
-      }
-    });
-  });
-});
-
-
