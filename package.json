@@ -2,7 +2,7 @@
   "type": "module",
   "name": "fourchest",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "build:css": "tailwindcss -i ./src/styles.css -o ./dist/output.css --watch",
     "start": "live-server ./",
