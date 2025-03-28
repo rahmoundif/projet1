@@ -1889,12 +1889,6 @@ html, body {
   min-height: 100%;
   overflow-x: hidden;
 }
-html, body {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  overflow-x: hidden;
-}
 body::before {
   content: "";
   position: fixed;
